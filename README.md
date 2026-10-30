@@ -30,6 +30,10 @@ The objective is to understand how different stocks perform over time and evalua
 - Risk vs. return comparison.
 - Stock performance visualizations.
 
+## Dashboard Preview
+
+![Stock Performance Dashboard](visualizations/stock_performance_dashboard.png)
+
 ## Technologies Used
 
 - Python
