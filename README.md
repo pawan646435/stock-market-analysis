@@ -1,28 +1,78 @@
 # Indian Stock Market Data Analysis
 
-A Python-based data analysis project that explores historical stock market data, evaluates investment performance, and compares risk and returns across five major Indian companies.
+A Python-based financial data analysis project that explores historical stock market data, evaluates investment performance, measures volatility, and compares risk-adjusted returns across five major Indian companies.
 
 ## Project Overview
 
-This project analyses approximately five years of historical stock market data for:
+This project analyses approximately five years of historical stock market data (November 2021 – October 2026) for five major companies listed on the National Stock Exchange of India (NSE).
 
-- Reliance Industries
-- Tata Consultancy Services (TCS)
-- Infosys
-- HDFC Bank
-- ICICI Bank
+The objective is to understand how different stocks perform over time and evaluate their returns relative to the risks involved.
 
-The objective is to understand historical price movements, calculate investment returns, measure volatility, and compare risk-adjusted performance using Python.
+## Companies Analysed
 
-## Tech Stack
+| Company | NSE Ticker |
+|---|---|
+| Reliance Industries | RELIANCE.NS |
+| Tata Consultancy Services | TCS.NS |
+| Infosys | INFY.NS |
+| HDFC Bank | HDFCBANK.NS |
+| ICICI Bank | ICICIBANK.NS |
 
-- **Python** – Programming language
-- **Pandas** – Data manipulation and analysis
-- **NumPy** – Numerical computations
-- **Matplotlib** – Data visualization
-- **Seaborn** – Statistical visualization
-- **yfinance** – Historical stock market data
-- **Jupyter Notebook** – Interactive analysis environment
+## Features
+
+- Historical stock data collection using Yahoo Finance.
+- Data cleaning and preprocessing.
+- Daily percentage return calculation.
+- Investment growth simulation with an initial investment of ₹100.
+- Annualized return and volatility analysis.
+- Compound Annual Growth Rate (CAGR) calculation.
+- Sharpe Ratio calculation.
+- Risk vs. return comparison.
+- Stock performance visualizations.
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- yfinance
+- Jupyter Notebook
+
+## Key Findings
+
+Based on the historical dataset and the analysis performed:
+
+| Stock | CAGR | Annualized Volatility |
+|---|---:|---:|
+| ICICI Bank | 12.59% | 19.56% |
+| Reliance Industries | 0.27% | 22.35% |
+| HDFC Bank | -1.61% | 21.06% |
+| TCS | -3.63% | 22.87% |
+| Infosys | -4.53% | 26.30% |
+
+### Investment Growth Comparison
+
+An initial investment of ₹100 was simulated for each stock using daily returns.
+
+| Stock | Final Value |
+|---|---:|
+| ICICI Bank | ₹180.79 |
+| Reliance Industries | ₹101.35 |
+| HDFC Bank | ₹92.24 |
+| TCS | ₹83.15 |
+| Infosys | ₹79.33 |
+
+ICICI Bank delivered the strongest performance among the five stocks during the analysed period, while Infosys experienced the highest volatility.
+
+## Risk Analysis
+
+Risk was evaluated using annualized volatility, while risk-adjusted performance was evaluated using the Sharpe Ratio.
+
+The Sharpe Ratio was calculated assuming a 0% annual risk-free rate for this exercise.
+
+**Note:** These results are based on historical adjusted prices and do not guarantee future performance. Transaction costs, taxes, dividends beyond price adjustments, and benchmark-relative performance are not separately modelled.
 
 ## Project Structure
 
@@ -31,111 +81,77 @@ stock-market-analysis/
 │
 ├── data/
 │   ├── raw/
-│   │   └── stock_data.csv
 │   └── processed/
-│       ├── cleaned_stock_data.csv
-│       └── stock_analysis_report.csv
 │
 ├── notebooks/
 │   └── 01_data_collection.ipynb
 │
 ├── src/
+│
 ├── visualizations/
 │   └── stock_performance_dashboard.png
 │
-├── requirements.txt
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
-## Analysis Performed
+## Installation and Setup
 
-### 1. Data Collection
-- Retrieved approximately five years of historical stock data using Yahoo Finance.
-- Collected Open, High, Low, Close and Volume data.
-
-### 2. Data Cleaning
-- Investigated missing and invalid records.
-- Identified zero-volume observations.
-- Created a separate cleaned dataset while preserving raw data.
-
-### 3. Exploratory Data Analysis
-- Examined historical closing prices.
-- Visualized price movements and trends.
-- Calculated daily percentage returns.
-
-### 4. Risk and Return Analysis
-Calculated:
-- Mean daily return
-- Daily return standard deviation
-- Maximum and minimum daily returns
-- Annualized volatility
-- Approximate annualized mean return
-- Sharpe Ratio
-
-### 5. Investment Performance Analysis
-- Simulated the growth of an initial ₹100 investment.
-- Calculated cumulative returns.
-- Calculated Compound Annual Growth Rate (CAGR).
-- Compared historical investment performance.
-
-## Key Findings
-
-Based on the selected historical period:
-
-- ICICI Bank recorded the highest CAGR among the five companies.
-- ICICI Bank also had the lowest annualized volatility.
-- Infosys recorded the highest annualized volatility.
-- Infosys had the lowest cumulative investment performance in this sample.
-
-## Visualizations
-
-The project includes:
-- Historical stock price charts
-- Risk vs Return scatter plot
-- Growth of ₹100 comparison
-- CAGR vs Risk analysis
-- Stock performance dashboard
-
-## How to Run
-
-1. Clone the repository.
+### 1. Clone the repository
 
 ```bash
-git clone 
+git clone https://github.com/pawan646435/stock-market-analysis.git
 cd stock-market-analysis
 ```
 
-2. Create and activate a virtual environment.
+### 2. Create a virtual environment
 
 ```bash
 python3 -m venv venv
+```
+
+### 3. Activate the environment
+
+macOS / Linux:
+
+```bash
 source venv/bin/activate
 ```
 
-3. Install dependencies.
+Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Launch Jupyter Notebook.
+### 5. Launch Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 
-5. Open `notebooks/01_data_collection.ipynb` and run the cells.
+Open `notebooks/01_data_collection.ipynb` to explore the analysis.
 
-## Data Source
+## Future Improvements
 
-Historical stock market data was retrieved using the Yahoo Finance Python library (`yfinance`).
+- Add Nifty 50 benchmark comparison.
+- Implement technical indicators such as RSI, MACD and moving averages.
+- Add portfolio optimization and asset allocation.
+- Develop an interactive dashboard using Streamlit.
+- Integrate additional stocks and market sectors.
 
-## Disclaimer
+## Author
 
-This project is for educational and analytical purposes only. Historical performance does not guarantee future returns. The analysis excludes certain real-world investment costs and uses simplified assumptions for selected financial metrics.
+**Pawan Kumar**
+
+GitHub: [@pawan646435](https://github.com/pawan646435)
 
 ---
 
-**Author:** Pawan 
-**Project:** Indian Stock Market Data Analysis  
-**Language:** Python
+*This project is intended for educational and analytical purposes, not as investment advice.*
