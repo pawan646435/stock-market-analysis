@@ -164,3 +164,28 @@ def generate_risk_report(
     )
 
     return report
+
+
+
+def calculate_return_statistics(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Calculate daily return statistics for each stock.
+
+    Parameters:
+        df: DataFrame containing Ticker and Daily_Return columns.
+
+    Returns:
+        DataFrame containing mean, volatility,
+        maximum and minimum daily returns.
+    """
+
+    
+    risk_return = df.groupby("Ticker").agg(
+        Mean_Return=("Daily_Return", "mean"),
+        Volatility=("Daily_Return", "std"),
+        Maximum_Return=("Daily_Return", "max"),
+        Minimum_Return=("Daily_Return", "min")
+    )
+
+    return risk_return
+

@@ -78,6 +78,23 @@ The Sharpe Ratio was calculated assuming a 0% annual risk-free rate for this exe
 
 **Note:** These results are based on historical adjusted prices and do not guarantee future performance. Transaction costs, taxes, dividends beyond price adjustments, and benchmark-relative performance are not separately modelled.
 
+## Nifty 50 Benchmark Analysis
+
+The performance of five selected stocks was compared
+against the Nifty 50 index over the same historical period.
+
+### Key Findings
+
+- Nifty 50 CAGR: 5.16%
+- ICICI Bank CAGR: 12.59%
+- ICICI Bank outperformed the benchmark by 7.43
+  percentage points.
+- Reliance, HDFC Bank, TCS, and Infosys underperformed
+  the benchmark.
+
+A benchmark comparison chart was added to the performance
+dashboard to visualize relative stock performance.
+
 ## Project Structure
 
 ```text
@@ -85,16 +102,26 @@ stock-market-analysis/
 │
 ├── data/
 │   ├── raw/
+│   │   └── stock_data.csv
 │   └── processed/
+│       ├── cleaned_stock_data.csv
+│       └── stock_analysis_report.csv
 │
 ├── notebooks/
 │   └── 01_data_collection.ipynb
 │
 ├── src/
+│   ├── __init__.py
+│   ├── data_collection.py
+│   ├── data_cleaning.py
+│   ├── risk_analysis.py
+│   ├── reporting.py
+│   └── visualization.py
 │
 ├── visualizations/
 │   └── stock_performance_dashboard.png
 │
+├── .gitignore
 ├── README.md
 └── requirements.txt
 ```
